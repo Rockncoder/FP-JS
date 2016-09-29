@@ -1,0 +1,15 @@
+{
+  "name": "fp-js",
+  "version": "0.0.1",
+  "description": "A playground for experimenting with functional programming ideas in JavaScript",
+  "author": "Troy Miles",
+  "repository": "https://github.com/Rockncoder/FP-JS",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d esx"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0"
+  }
+}
