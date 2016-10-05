@@ -6,6 +6,7 @@ Many of the ideas are from the book,
   "The Magical World of Functional Programming: Part 1: Thinking Functionally" 
   by K Anand Kumar
   http://amzn.to/1HPzRro
+  It is a two part book series, but I only pulled ideas from the first.
 
 Another great book, but a more challenging read is: 
   Structure and Interpretation of Computer Programs
