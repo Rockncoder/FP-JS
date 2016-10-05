@@ -7,6 +7,6 @@ Many of the ideas are from the book,
   by K Anand Kumar
   http://amzn.to/1HPzRro
 
-Another great book, but a challenging read is: 
+Another great book, but a more challenging read is: 
   Structure and Interpretation of Computer Programs
   http://sarabander.github.io/sicp/
