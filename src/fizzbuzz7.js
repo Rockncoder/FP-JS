@@ -15,17 +15,17 @@
       return tuple;
     }
   };
-
+  // here is are simple compose function
   const compose = function (fn1, fn2) {
     return function (arg) {
       return fn2(fn1(arg));
     }
   };
-
+  // let's use compose to combine the test and format functions
   const controller = function (from, to, testFunc, formatFunc, outputFunc) {
-    const ar = Array.from({length: to - from + 1}, (elem, index)=> index + 1);
+    const ar = Array.from({length: to - from + 1}, (elem, index) => index + 1);
     const mapFunc = compose(testFunc, formatFunc);
-    const results = ar.map((elem, index)=>mapFunc(elem));
+    const results = ar.map((elem, index) => mapFunc(elem));
     results.forEach(outputFunc);
   };
 
@@ -36,7 +36,7 @@
   const test = num => bang(buzz(fizz(initialize(num))));
 
   const formatOutput = function (ar) {
-    return ar.reduce((prev, curr, ndx) => ndx == 1 ? prev + ' ' + curr : prev + curr, '');
+    return ar.reduce((prev, curr, ndx) => ndx === 1 ? prev + ' ' + curr : prev + curr, '');
   };
 
   const print = function (output) {

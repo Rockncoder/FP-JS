@@ -1,7 +1,7 @@
 //*****************************************************************************
 // Just make it work
 // our first pass attempt works and is fairly concise,
-// but no separation of concerns no flexibility either.
+// but no separation of concerns and no flexibility either.
 //*****************************************************************************
 
 (function () {

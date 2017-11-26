@@ -9,15 +9,12 @@
 
   // 1: a controller since it is in charge
   // let's take the range as parameters instead of hard coding
-
   const controller = function (from, to) {
     for (let i = from; i < to; i++) {
       print(formatOutput(test(i)));
     }
   };
-
   // 2: a tester
-
   const test = function (num) {
     let retval = [num];
     if (num % 3 === 0) {
@@ -28,9 +25,7 @@
     }
     return retval;
   };
-
   // 3: formatter
-
   const formatOutput = function (ar) {
     let output = ar[0] + ' ';
     for (let i = 1; i < ar.length; i++) {
@@ -38,9 +33,7 @@
     }
     return output;
   };
-
   // 4: display the results
-
   const print = function (output) {
     console.info(output);
   };

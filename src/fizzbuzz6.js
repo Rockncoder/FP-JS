@@ -31,7 +31,7 @@
   const test = num => bang(buzz(fizz(initialize(num))));
 
   const formatOutput = function (ar) {
-    return ar.reduce((prev, curr, ndx) => ndx == 1 ? prev + ' ' + curr : prev + curr, '');
+    return ar.reduce((prev, curr, ndx) => ndx === 1 ? prev + ' ' + curr : prev + curr, '');
   };
 
   const print = function (output) {

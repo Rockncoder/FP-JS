@@ -7,7 +7,7 @@
 (function () {
   'use strict';
   console.info('fizzBuzz9!');
-
+  // unchanged from the last iteration
   const testMaker = function (condition, whenTrue) {
     return function (tuple) {
       if (condition(tuple[0])) {
@@ -16,13 +16,13 @@
       return tuple;
     }
   };
-
+  // unchanged from the last iteration
   const compose = function (fn1, fn2) {
     return function (arg) {
       return fn2(fn1(arg));
     }
   };
-
+  // unchanged from the last iteration
   const controllerMaker = function (testFunc, formatFunc, outputFunc) {
     return function (from, to) {
       const ar = Array.from({length: to - from + 1}, (elem, index)=> index + 1);
@@ -31,16 +31,18 @@
       results.forEach(outputFunc);
     };
   };
-
+  // unchanged from the last iteration
   const formatOutput = function (ar) {
-    return ar.reduce((prev, curr, ndx) => ndx == 1 ? prev + ' ' + curr : prev + curr, '');
+    return ar.reduce((prev, curr, ndx) => ndx === 1 ? prev + ' ' + curr : prev + curr, '');
   };
-
   // this is the only impure functions which remains, but it is to be expected
   const print = function (output) {
     console.info(output);
   };
-
   // this is probably the step too far - this code is much harder to read than the previous version
-  controllerMaker(compose(compose(x => [x], testMaker(x=>x % 3 === 0, 'Fizz')), testMaker(x=>x % 5 === 0, 'Buzz')),formatOutput, print)(1, 106);
+  controllerMaker(compose(compose(
+    x => [x], testMaker(x=>x % 3 === 0, 'Fizz')),
+    testMaker(x=>x % 5 === 0, 'Buzz')),
+    formatOutput, print)
+  (1, 106);
 }());
