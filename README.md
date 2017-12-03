@@ -1,6 +1,8 @@
 Functional Programming in JavaScript
 The code to go with my SoCal Code Camp talk 14 November 2015.
-Massively updated for Silicon Valley Code Camp, 1 October 2016
+Massively updated for Silicon Valley Code Camp, 1 October 2016.
+Updated again for SoCal Code Camp at USC in Los Angeles, 2+3 December 2017
+A PDF of the slides from the talk are in the root directory.
 
 Many of the ideas are from the book, 
   "The Magical World of Functional Programming: Part 1: Thinking Functionally" 
