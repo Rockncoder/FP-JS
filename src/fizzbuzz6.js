@@ -8,18 +8,11 @@
   'use strict';
   console.info('fizzBuzz6');
 
-  const testMaker = function (condition, whenTrue) {
-    return function (tuple) {
-      if (condition(tuple[0])) {
-        tuple.push(whenTrue);
-      }
-      return tuple;
-    }
-  };
+  const testMaker = (condition, whenTrue) => tuple => condition(tuple[0]) ? [...tuple, whenTrue] : tuple;
 
-  const controller = function (from, to) {
-    const ar = Array.from({length: to - from + 1}, (elem, index)=> index + 1);
-    const results = ar.map((elem, index)=>formatOutput(test(elem)));
+  const controller = (from, to) => {
+    const ar = Array.from({length: to - from + 1}, (elem, index) => index + 1);
+    const results = ar.map(elem => formatOutput(test(elem)));
     results.forEach(print);
   };
 
@@ -30,13 +23,9 @@
   const bang = testMaker(x => x % 7 === 0, 'Bang');
   const test = num => bang(buzz(fizz(initialize(num))));
 
-  const formatOutput = function (ar) {
-    return ar.reduce((prev, curr, ndx) => ndx === 1 ? prev + ' ' + curr : prev + curr, '');
-  };
+  const formatOutput = (ar) => ar.reduce((prev, curr, ndx) => ndx === 1 ? prev + ' ' + curr : prev + curr, '');
 
-  const print = function (output) {
-    console.info(output);
-  };
+  const print = output => console.info(output);
 
   controller(1, 106);
 }());

@@ -7,41 +7,28 @@
   console.info('fizzBuzz4');
 
   // unchanged from the last iteration
-  const controller = function (from, to) {
+  const controller = (from, to) => {
     const ar = Array.from({length: to - from + 1}, (elem, index) => index + 1);
-    const results = ar.map((elem, index) => formatOutput(test(elem)));
+    const results = ar.map(elem => formatOutput(test(elem)));
     results.forEach(print);
   };
   // 1: convert the number into an array
-  const initialize = function (x) {
-    return [x];
-  };
+  const initialize = x => [x];
+
   // 2: appends Fizz if the number is a multiple of 3
-  const fizz = function (tuple) {
-    if (tuple[0] % 3 === 0) {
-      tuple.push('Fizz');
-    }
-    return tuple;
-  };
+  const fizz = tuple => tuple[0] % 3 === 0 ? [...tuple, 'Fizz'] : tuple;
   // 3: appends Buzz if the number is a multiple of 5
-  const buzz = function (tuple) {
-    if (tuple[0] % 5 === 0) {
-      tuple.push('Buzz');
-    }
-    return tuple;
-  };
+  const buzz = tuple => tuple[0] % 5 === 0 ? [...tuple, 'Buzz'] : tuple;
+
+
   // 4: use composition to combine it all together
-  const test = function (num) {
-    return buzz(fizz(initialize(num)));
-  };
+  const test = num => buzz(fizz(initialize(num)));
+
   // unchanged from the last iteration
-  const formatOutput = function (ar) {
-    return ar.reduce((prev, curr, ndx) => ndx === 1 ? prev + ' ' + curr : prev + curr, '');
-  };
+  const formatOutput = (ar) => ar.reduce((prev, curr, ndx) => ndx === 1 ? prev + ' ' + curr : prev + curr, '');
+
   // unchanged from the last iteration
-  const print = function (output) {
-    console.info(output);
-  };
+  const print = output => console.info(output);
 
   controller(1, 100);
 }());

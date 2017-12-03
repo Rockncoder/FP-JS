@@ -7,33 +7,30 @@
   console.info('fizzBuzz3');
 
   // getting rid of the loop and replacing it with a map, passing in the range
-  const controller = function (from, to) {
+  const controller = (from, to) => {
     // we generate the array using ES2015
     const ar = Array.from({length: to - from + 1}, (elem, index) => index + 1);
     // we map over the array to generate the results array
-    const results = ar.map((elem, index) => formatOutput(test(elem)));
+    const results = ar.map(elem => formatOutput(test(elem)));
     // and finally we render the results
     results.forEach(print);
   };
   // unchanged from the last iteration
-  const test = function (num) {
-    let retval = [num];
+  const test = num => {
+    let results = [num];
     if (num % 3 === 0) {
-      retval.push('Fizz');
+      results = results.concat('Fizz');
     }
     if (num % 5 === 0) {
-      retval.push('Buzz');
+      results = results.concat('Buzz');
     }
-    return retval;
+    return results;
   };
   // this is a reduction - taking an array and making it a single string
-  const formatOutput = function (ar) {
-    return ar.reduce((prev, curr, ndx) => ndx === 1 ? prev + ' ' + curr : prev + curr, '');
-  };
+  const formatOutput = ar => ar.reduce((prev, curr, ndx) => ndx === 1 ? prev + ' ' + curr : prev + curr, '');
+
   // unchanged from the last iteration
-  const print = function (output) {
-    console.info(output);
-  };
+  const print = output => console.info(output);
 
   controller(1, 100);
 }());

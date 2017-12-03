@@ -9,7 +9,7 @@
   console.info('fizzBuzz1');
 
   // this is not a function, it is a procedure
-  const fizzBuzz = function () {
+  function fizzBuzz() {
     for (let i = 1; i <= 100; i += 1) {
       let printVal = i + ' ';
       if (i % 3 === 0) {
@@ -20,7 +20,7 @@
       }
       console.info(printVal);
     }
-  };
+  }
 
   fizzBuzz();
 }());
